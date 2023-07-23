@@ -1,7 +1,14 @@
 import { createApp } from 'vue'
 import './style.css'
-// import App from './App.vue'
-import header from './header.vue'
+import App from './App.vue'
+import VueRouter from './router'
+import store from './store'
 
-// createApp(App).mount('#app')
-createApp(header).mount('#header')
+
+const app = createApp(App);
+app.use(VueRouter);
+
+app.use(store);
+// @vue/runtime-core
+app.config.globalProperties.$globalNum2 = 42;
+app.mount('#app');

@@ -1,6 +1,6 @@
 <template>
     <div id="_button">
-        <button @click="add_clock"></button>
+        <button @click="add_clock('')"></button>
     </div>
     <div id="main">
     
@@ -23,13 +23,18 @@ export default {
         }
     },
     methods: {
-        add_clock() {
+        add_clock(msg) {
             var new_clock = document.createElement("div");
             new_clock.id = this.Num;
             new_clock.className = 'alarm';
+            if(msg.n === '' || msg.n === undefined){
+                msg.n = '新建事项';
+            }
+            new_clock.innerHTML = 
+            msg.n + '<br />' + '<br />' + "时长：" + msg.t ;
             this.Num = this.Num + 1;
             function suiJi(m,n){
-                return m+parseInt(Math.random()*(n-m+1))
+                return m+parseInt(Math.random()*(n-m+1));
             }
             var result = "#"
             for(var i = 0; i<6; i++){
@@ -37,14 +42,19 @@ export default {
             }
             new_clock.style.backgroundColor = result;
             document.getElementById('main').appendChild(new_clock);
-        }
+        },
     },
 };
 </script>
 
 <style>
 .alarm{
-    width: 50px;
-    height: 30px;
+    margin: 0.3rem 0;
+    width: 100%;
+    height: 5.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
 }
+
+
 </style>

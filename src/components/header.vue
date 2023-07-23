@@ -7,24 +7,19 @@
     <div>{{ username }}</div>
 </template>
 
-<script>
-// import { EventBus } from '../event-bus';
-export default {
-    data() {
-        return {
-            username: '用户名',
-        }
-    },
-    
-    methods: {
-        opencheckin() {
-            this.$emit("change_showcheck");
-        },
-        openadd() {
-            this.$emit("change_showadd");
-        }
-    },
+<script setup>
+import {ref} from 'vue';
+import { defineProps, defineEmits  } from 'vue';
+const username = ref('');
+const emit = defineEmits(['change_showadd', 'change_showcheck']);
+function opencheckin() {
+    emit('change_showcheck');
 }
+
+function openadd() {
+    emit('change_showadd');
+}
+
 </script>
 <style>
 #icon{

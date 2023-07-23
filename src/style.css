@@ -79,10 +79,12 @@ button:focus-visible {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  width: 100%;
+  /* padding: 2rem; */
   text-align: center;
+  height: calc(100vh);
 }
 
 @media (prefers-color-scheme: light) {
@@ -97,20 +99,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-#header{
-  background-color: antiquewhite;
-  margin: 0 auto;
-  max-width: 2560px;
-  /* position: fixed; */
-  position: absolute;
-  top:0;
-  
-  display: flex;
-  justify-content: space-between;
-  align-content:center;
-  align-items:center;
-  width: 100%;
-
-  min-height: 64px;
+::-webkit-scrollbar{
+  width: 5px;
+  height: 0;
+}
+::-webkit-scrollbar-button{
+  display: none;
+}
+::-webkit-scrollbar-thumb{
+  background-color: red;
+  border-radius: 1.5rem;
 }

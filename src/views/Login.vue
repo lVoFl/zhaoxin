@@ -102,8 +102,14 @@ export default {
 <style>
 form {
   /* 居中表单 */
-  margin: 0;
-  width: 400px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 32rem;
+  height: 16rem;
   /* 显示表单的轮廓 */
   padding: 1em;
   border: 1px solid #ccc;
